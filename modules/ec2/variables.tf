@@ -6,12 +6,9 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-# AMI Ubuntu Bionic 18.04 fixe pour us-east-1
-variable "ami_id" {
-  description = "AMI Ubuntu Bionic 18.04"
-  type        = string
-  default     = "ami-0e761650b658ef0a2"
-}
+# L'AMI est récupérée dynamiquement via data source dans main.tf
+# Plus besoin de variable statique ami_id
+# Le data source cible la dernière Ubuntu Bionic Pro disponible
 
 # Tags de l'instance sous forme de map
 # Sera surchargée depuis le dossier app

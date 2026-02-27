@@ -1,15 +1,40 @@
 # ------------------------------------------------------
-# AMI Ubuntu Bionic 18.04 fixe pour us-east-1
-# La version gratuite n'est plus disponible via data source
-# On utilise donc l'AMI Pro Canonical connue
-# La variable ami_id est définie dans variables.tf
+# Récupération dynamique de la dernière AMI Ubuntu Bionic Pro 18.04
+# owners = "099720109477" est l'ID Canonical (éditeur officiel Ubuntu)
+# La version gratuite n'étant plus disponible, on cible ubuntu-pro-server
+# Les filtres garantissent : architecture x86_64, disque EBS persistant,
+# virtualisation HVM moderne
 # ------------------------------------------------------
+data "aws_ami" "ubuntu_bionic" {
+  most_recent = true
+  owners      = ["099720109477"]
+
+  filter {
+    name   = "name"
+    values = ["ubuntu-pro-server/images/hvm-ssd/ubuntu-bionic-*"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 
 # ------------------------------------------------------
 # Création de l'instance EC2
 # ------------------------------------------------------
 resource "aws_instance" "this" {
-  ami               = var.ami_id
+  ami               = data.aws_ami.ubuntu_bionic.id
   instance_type     = var.instance_type
   availability_zone = var.availability_zone
   subnet_id         = var.subnet_id
