@@ -1,0 +1,20 @@
+# Dossier providers Terraform (trop lourd, inutile sur GitHub)
+**/.terraform/
+
+# State Terraform (contient des infos sensibles !)
+*.tfstate
+*.tfstate.backup
+
+# Fichier de lock (optionnel mais recommandé de le garder)
+# .terraform.lock.hcl
+
+# Clés SSH et secrets (TRÈS IMPORTANT !)
+.secrets/
+*.pem
+
+# Fichier généré automatiquement
+ip_ec2.txt
+
+# OS
+.DS_Store
+Thumbs.db
