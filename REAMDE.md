@@ -1,5 +1,11 @@
 # Projet Terraform - Déploiement EC2 sur AWS
 
+## Illustrations :
+![CLI_NGINX_UP](./images/CLI_NGINX_UP.png)
+![nginx_up](./images/nginx_up.png)
+![SECURITY_GROUP](./images/SECURITY_GROUP.png)
+![VOLUME](./images/VOLUME.png)
+
 ## Description
 
 Ce projet Terraform déploie une infrastructure complète sur AWS composée de 4 modules indépendants et réutilisables :
