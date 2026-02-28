@@ -2,19 +2,19 @@
 
 ## Illustrations :
 <p align="center">
-  <img src="./images/CLI_NGINX_UP.png" width="350">
+  <img src="./images/CLI_NGINX_UP.png" width="600">
 </p>
 
 <p align="center">
-  <img src="./images/nginx_up.png" width="350">
+  <img src="./images/nginx_up.png" width="600">
 </p>
 
 <p align="center">
-  <img src="./images/SECURITY_GROUP.png" width="350">
+  <img src="./images/SECURITY_GROUP.png" width="600">
 </p>
 
 <p align="center">
-  <img src="./images/VOLUME.png" width="350">
+  <img src="./images/VOLUME.png" width="600">
 </p>
 ## Description
 
